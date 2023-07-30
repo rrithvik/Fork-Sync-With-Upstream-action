@@ -7,6 +7,10 @@ branding:
   color: orange
 
 inputs:
+  auth_token:
+    description: "Authorization Token for Git User"
+    required: false
+
   target_sync_branch:
     description: 'Branch receiving updates from the upstream repo, e.g. => main, master, prod'
     required: true

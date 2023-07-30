@@ -25,6 +25,7 @@ if [ -z "${GITHUB_ACTIONS}" ] || [ "${GITHUB_ACTIONS}" = false ]; then
     # region vars
     # Github username of the user initiating the workflow run
     GITHUB_ACTOR=""
+    INPUT_AUTH_TOKEN=""
     # Access token for authenticating commands in the target repo
     # shellcheck disable=SC2034
     INPUT_TARGET_REPO_TOKEN=""
@@ -63,6 +64,7 @@ if [ -z "${GITHUB_ACTIONS}" ] || [ "${GITHUB_ACTIONS}" = false ]; then
 fi
 
 write_out -1 "${GITHUB_ACTOR}"
+write_out -1 "${INPUT_AUTH_TOKEN}"
 write_out -1 "${INPUT_TARGET_REPO_TOKEN}"
 write_out -1 "${GITHUB_REPOSITORY}"
 write_out -1 "${INPUT_TARGET_SYNC_BRANCH}"

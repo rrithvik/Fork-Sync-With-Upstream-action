@@ -10,7 +10,7 @@ push_new_commits() {
 
     if [ -n "${INPUT_TARGET_REPO_TOKEN}" ]; then
         write_out -1 "SET Remote 2"
-        git remote set-url origin "https://${GITHUB_ACTOR}:${INPUT_TARGET_REPO_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+        git remote set-url origin "https://${GITHUB_ACTOR}:${INPUT_AUTH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
     fi
     write_out -1 "SET Remote 3"
 
