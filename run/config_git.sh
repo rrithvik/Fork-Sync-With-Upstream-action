@@ -11,8 +11,11 @@ config_for_action() {
 # store current user config data for reset after action run
 get_current_user_config() {
     CURRENT_USER=$(git config --get --default="null" user.name)
+    write_out -1 "${CURRENT_USER}"
     CURRENT_EMAIL=$(git config --get --default="null" user.email)
+    write_out -1 "${CURRENT_EMAIL}"
     CURRENT_PULL_CONFIG=$(git config --get --default="false" pull.rebase)
+    write_out -1 "${CURRENT_PULL_CONFIG}"
 }
 
 # set action config values
