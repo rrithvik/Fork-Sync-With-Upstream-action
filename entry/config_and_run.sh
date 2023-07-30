@@ -62,6 +62,21 @@ if [ -z "${GITHUB_ACTIONS}" ] || [ "${GITHUB_ACTIONS}" = false ]; then
     INPUT_HOST_DOMAIN='github.com'
 fi
 
+write_out -1 "${GITHUB_ACTOR}"
+write_out -1 "${INPUT_TARGET_REPO_TOKEN}"
+write_out -1 "${GITHUB_REPOSITORY}"
+write_out -1 "${INPUT_TARGET_SYNC_BRANCH}"
+write_out -1 "${INPUT_UPSTREAM_REPO_ACCESS_TOKEN}"
+write_out -1 "${INPUT_UPSTREAM_SYNC_REPO}"
+write_out -1 "${INPUT_UPSTREAM_SYNC_BRANCH}"
+write_out -1 "${INPUT_TARGET_BRANCH_CHECKOUT_ARGS}"
+write_out -1 "${INPUT_GIT_LOG_FORMAT_ARGS}"
+write_out -1 "${INPUT_UPSTREAM_PULL_ARGS}"
+write_out -1 "${INPUT_TARGET_BRANCH_PUSH_ARGS}"
+write_out -1 "${INPUT_GIT_CONFIG_USER}"
+write_out -1 "${INPUT_GIT_CONFIG_EMAIL}"
+write_out -1 "${INPUT_GIT_CONFIG_PULL_REBASE}"
+
 if [ -z "${INPUT_UPSTREAM_REPO_ACCESS_TOKEN}" ]; then
     # shellcheck disable=SC2034
     UPSTREAM_REPO_URL="https://${INPUT_HOST_DOMAIN}/${INPUT_UPSTREAM_SYNC_REPO}.git"
