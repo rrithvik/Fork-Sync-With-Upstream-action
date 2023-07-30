@@ -9,6 +9,7 @@ push_new_commits() {
     if [ -n "${INPUT_TARGET_REPO_TOKEN}" ]; then
         git remote set-url origin "https://${GITHUB_ACTOR}:${INPUT_TARGET_REPO_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
     fi
+    write_out "SET Remote"
 
     # shellcheck disable=SC2086
     git push ${INPUT_TARGET_BRANCH_PUSH_ARGS} origin "${INPUT_TARGET_SYNC_BRANCH}"
