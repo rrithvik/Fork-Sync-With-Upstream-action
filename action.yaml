@@ -11,6 +11,11 @@ inputs:
     description: "Authorization Token for Git User"
     required: false
 
+  target_sync_repo:
+    description: 'Receiving repository, e.g. => downstream/forked-repo'
+    required: false
+    default: ''
+
   target_sync_branch:
     description: 'Branch receiving updates from the upstream repo, e.g. => main, master, prod'
     required: true

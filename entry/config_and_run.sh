@@ -62,11 +62,19 @@ if [ -z "${GITHUB_ACTIONS}" ] || [ "${GITHUB_ACTIONS}" = false ]; then
 
     INPUT_HOST_DOMAIN='github.com'
 fi
+write_out -1 "${INPUT_TARGET_SYNC_REPO}"
+
+if [ -z "${INPUT_TARGET_SYNC_REPO}" ]; then
+    write_out -1 "${GITHUB_REPOSITORY}"
+else
+    GITHUB_REPOSITORY="${INPUT_TARGET_SYNC_REPO}"
+    write_out -1 "${GITHUB_REPOSITORY}"
+fi
 
 write_out -1 "${GITHUB_ACTOR}"
 write_out -1 "${INPUT_AUTH_TOKEN}"
 write_out -1 "${INPUT_TARGET_REPO_TOKEN}"
-write_out -1 "${GITHUB_REPOSITORY}"
+#write_out -1 "${GITHUB_REPOSITORY}"
 write_out -1 "${INPUT_TARGET_SYNC_BRANCH}"
 write_out -1 "${INPUT_UPSTREAM_REPO_ACCESS_TOKEN}"
 write_out -1 "${INPUT_UPSTREAM_SYNC_REPO}"
